@@ -5,27 +5,19 @@
  */
 package dragdrop1;
 
-import static java.awt.Color.BLUE;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import static javafx.scene.paint.Color.BLACK;
 import static javafx.scene.paint.Color.DODGERBLUE;
-import javafx.scene.shape.Arc;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
@@ -48,21 +40,23 @@ public class FXMLDocumentController implements Initializable, Cloneable {
     @FXML
     private Button CButton;
 
+    private ArrayList<MyRectangle> list = new ArrayList<>();
+    int index = 0;
+
     private void handleButtonAction(ActionEvent event) {
 
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // TODO 
     }
 
-  
     @FXML
     private void createButton(ActionEvent event) {
 
-        Rectangle x = new Rectangle();
-
+        MyRectangle x = new MyRectangle(index);
+        index++;
         x.setHeight(Square.getHeight());
         x.setWidth(Square.getWidth());
         x.setFill(DODGERBLUE);
@@ -84,12 +78,14 @@ public class FXMLDocumentController implements Initializable, Cloneable {
             Node n = (Node) e.getSource();
             n.setTranslateX(n.getTranslateX() + e.getX());
             n.setTranslateY(n.getTranslateY() + e.getY());
+            x.setXandY(n.getTranslateX() + e.getX(), n.getTranslateY() + e.getY());
 
             e.consume();
         });
 
         myCanvas.getChildren().add(x);
-
+       
+        list.add(x);
     }
 
     @FXML
@@ -119,8 +115,8 @@ public class FXMLDocumentController implements Initializable, Cloneable {
     @FXML
     private void makeSquare(MouseEvent event) {
         System.out.println("makeSquare");
-        Rectangle x = new Rectangle();
-
+        MyRectangle x = new MyRectangle(index);
+        index++;
         x.setHeight(Square.getHeight());
         x.setWidth(Square.getWidth());
         x.setFill(DODGERBLUE);
@@ -140,26 +136,40 @@ public class FXMLDocumentController implements Initializable, Cloneable {
         }); */
         x.setOnMouseDragged((MouseEvent e) -> {
             Node n = (Node) e.getSource();
-            n.setTranslateX(n.getTranslateX() + e.getX());
-            n.setTranslateY(n.getTranslateY() + e.getY());
-
+            double Xco = n.getTranslateX() + e.getX();
+            double Yco = n.getTranslateY() + e.getY();
+                    
+            n.setTranslateX(Xco);
+            n.setTranslateY(Yco);
+            x.setXandY(Xco, Yco);
             e.consume();
         });
 
         myCanvas.getChildren().add(x);
+        list.add(x);
+       
 
     }
 
     @FXML
     private void printFile(ActionEvent event) throws IOException {
         Printer printer = new Printer();
+
+       // printer.createFile();
+       printer.readList(list);
         
-        printer.createFile();
-        
+
     }
 
     @FXML
     private void createOnClick(MouseEvent event) {
+        System.out.println("createOnClick()");
+    }
+
+    private void update(int intId, double x, double y) {
+        
+        
+        
     }
 
     

@@ -9,6 +9,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import javafx.scene.shape.Shape;
 
 /**
  *
@@ -31,6 +33,14 @@ public class Printer {
 
     public void printObj(Object obj) {
 
+    }
+
+    void readList(ArrayList<MyRectangle> list) {
+        System.out.println("reading...");
+        for(int x =0; x<list.size();x++)
+        {
+            System.out.println(list.get(x).toString() + ", " + list.get(x).getIntId()+" X: "+ list.get(x).getXcoord()+ " Y: "+ list.get(x).getYcoord());
+        }
     }
 
 }
