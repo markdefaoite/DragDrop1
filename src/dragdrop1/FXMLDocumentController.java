@@ -156,7 +156,7 @@ public class FXMLDocumentController implements Initializable, Cloneable {
         Printer printer = new Printer();
 
        // printer.createFile();
-       printer.readList(list);
+       printer.pushToFile(list);
         
 
     }
@@ -168,8 +168,12 @@ public class FXMLDocumentController implements Initializable, Cloneable {
 
     private void update(int intId, double x, double y) {
         
-        
-        
+    }
+
+    @FXML
+    private void readNodes(ActionEvent event) {
+        Printer printer = new Printer();
+        System.out.println(printer.readList(list));
     }
 
     
