@@ -61,23 +61,31 @@ public class Printer {
             reader = new BufferedReader(new FileReader("template.html"));
             writer = new FileWriter("template2.html");
             String line = reader.readLine();
+            String newContent = "";
 //            bw.write(line);
-            String newContent = "myGamePiece = new component(30, 30, \"red\", 10, 120);" + "\n";
+            //newContent = "myGamePiece = new component(30, 30, \"red\", 10, 120);" + "\n";
+            
+            for(int i =0; i< list.size();i++){
+                newContent += "myGamePiece = new component("+list.get(i).getWidth()+", "+list.get(i).getHeight()+",\"red\", "
+                        +list.get(i).Xcoord +", "+ list.get(i).Ycoord+");" + "\n";
+            }
+            
+            
             if (line == null) {
                 System.out.println("NULL file");
             } else {
                 while (line != null) {
                     x++;
                     System.out.println(x);
-                    System.out.println(line);
-                    if (line.equals("<!-- Xcomponent")) {
+                    //System.out.println(line);
+                    if (line.equals("<!-- Xcomponent --> ")) {
                         writer.append(newContent + "\n");
                         
                         System.out.println(line);
                     } else {
                         writer.append(line + "\n");
                         
-                        System.out.println(line);
+                        //System.out.println(line);
                     }
 
                     line = reader.readLine();

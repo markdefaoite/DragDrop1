@@ -12,9 +12,13 @@ canvas {
 <body onload="startGame()">
 <script>
 
+var myGamePiece;
+
 function startGame() {
 
-myGamePiece = new component(30, 30, "red", 10, 120);
+myGamePiece = new component(50.0, 50.0,"red", 85.0, 105.0);
+myGamePiece = new component(50.0, 50.0,"red", 169.0, 107.0);
+myGamePiece = new component(50.0, 50.0,"red", 72.0, 233.0);
 
 	
 	
@@ -50,6 +54,14 @@ var myGameArea = {
 	
 	
 }
+
+function updateGameArea() {
+	
+	myGameArea.clear();
+    myGamePiece.update();
+}
+
+
 
 </script>
 </body>
