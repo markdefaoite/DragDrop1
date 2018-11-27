@@ -12,13 +12,19 @@ canvas {
 <body onload="startGame()">
 <script>
 
-var myGamePiece;
+ var myGamePieceA; 
+ var myGamePieceB; 
+ var myGamePieceC; 
+ var myGamePieceD; 
+
+
 
 function startGame() {
 
-myGamePiece = new component(50.0, 50.0,"red", 85.0, 105.0);
-myGamePiece = new component(50.0, 50.0,"red", 169.0, 107.0);
-myGamePiece = new component(50.0, 50.0,"red", 72.0, 233.0);
+myGamePieceA = new component(50.0, 50.0,"red", 210.0, 226.0);
+myGamePieceB = new component(50.0, 50.0,"red", -275.0, 255.0);
+myGamePieceC = new component(50.0, 50.0,"red", 499.0, 132.0);
+myGamePieceD = new component(50.0, 50.0,"red", 145.0, 177.0);
 
 	
 	
@@ -58,7 +64,11 @@ var myGameArea = {
 function updateGameArea() {
 	
 	myGameArea.clear();
-    myGamePiece.update();
+myGamePieceA.update(); 
+myGamePieceB.update(); 
+myGamePieceC.update(); 
+myGamePieceD.update(); 
+
 }
 
 

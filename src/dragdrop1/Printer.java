@@ -15,7 +15,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.scene.shape.Shape;
+
+
 
 /**
  *
@@ -50,10 +51,11 @@ public class Printer {
     }
 
     void pushToFile(ArrayList<MyRectangle> list) {
-        //File file = new File("template.html");
+        
         System.out.println("pushToFile()");
-        String content = "";
+        
         int x = 0;
+        char identifier = 'A';
         BufferedReader reader = null;
         FileWriter writer = null;
 
@@ -61,33 +63,40 @@ public class Printer {
             reader = new BufferedReader(new FileReader("template.html"));
             writer = new FileWriter("template2.html");
             String line = reader.readLine();
-            String newContent = "";
-//            bw.write(line);
-            //newContent = "myGamePiece = new component(30, 30, \"red\", 10, 120);" + "\n";
-            
-            for(int i =0; i< list.size();i++){
-                newContent += "myGamePiece = new component("+list.get(i).getWidth()+", "+list.get(i).getHeight()+",\"red\", "
-                        +list.get(i).Xcoord +", "+ list.get(i).Ycoord+");" + "\n";
+            String componentIntialize = "", componentDeclare = "", componentUpdate = "";
+
+
+            for (int i = 0; i < list.size(); i++) {
+                componentDeclare += " var myGamePiece" + identifier + "; \n";
+
+                componentIntialize += "myGamePiece" + identifier + " = new component(" + list.get(i).getWidth() + ", " + list.get(i).getHeight() + ",\"red\", "
+                        + list.get(i).Xcoord + ", " + list.get(i).Ycoord + ");" + "\n";
+
+                componentUpdate += "myGamePiece" + identifier + ".update(); \n";
+                identifier++;
             }
-            
-            
+
             if (line == null) {
                 System.out.println("NULL file");
             } else {
                 while (line != null) {
-                    x++;
-                    System.out.println(x);
-                    //System.out.println(line);
-                    if (line.equals("<!-- Xcomponent --> ")) {
-                        writer.append(newContent + "\n");
+                    
+                    if (line.equals("<!-- component declare -->")) {
+                        System.out.println(line + "\n" + componentDeclare);
+                        writer.append(componentDeclare + "\n");
+
+                    } else if (line.equals("<!-- component intialize --> ")) {
+                        System.out.println(line + "\n" + componentIntialize);
+
+                        writer.append(componentIntialize + "\n");
+
                         
-                        System.out.println(line);
+                    } else if (line.equals("<!-- component update -->")) {
+                        System.out.println(line + "\n" + componentUpdate);
+                        writer.append(componentUpdate + "\n");
                     } else {
                         writer.append(line + "\n");
-                        
-                        //System.out.println(line);
                     }
-
                     line = reader.readLine();
                 }
             }
