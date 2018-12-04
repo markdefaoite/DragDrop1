@@ -114,9 +114,10 @@ public class FXMLDocumentController implements Initializable, Cloneable {
 
     @FXML
     private void makeSquare(MouseEvent event) {
-        System.out.println("makeSquare");
+        
         MyRectangle x = new MyRectangle(index);
         index++;
+        System.out.println("makeSquare: " + index);
         x.setHeight(Square.getHeight());
         x.setWidth(Square.getWidth());
         x.setFill(DODGERBLUE);

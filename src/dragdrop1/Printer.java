@@ -54,8 +54,8 @@ public class Printer {
         
         System.out.println("pushToFile()");
         
-        int x = 0;
-        char identifier = 'A';
+        int subIdentifierCounter = 0;
+        char identifier = 'A', subIdentifier = 'A';
         BufferedReader reader = null;
         FileWriter writer = null;
 
@@ -67,13 +67,22 @@ public class Printer {
 
 
             for (int i = 0; i < list.size(); i++) {
-                componentDeclare += " var myGamePiece" + identifier + "; \n";
+                componentDeclare += " var myGamePiece" + identifier + subIdentifier + "; \n";
 
-                componentIntialize += "myGamePiece" + identifier + " = new component(" + list.get(i).getWidth() + ", " + list.get(i).getHeight() + ",\"red\", "
+                componentIntialize += "myGamePiece" + identifier + subIdentifier + " = new component(" + list.get(i).getWidth() + ", " + list.get(i).getHeight() + ",\"red\", "
                         + list.get(i).Xcoord + ", " + list.get(i).Ycoord + ");" + "\n";
 
-                componentUpdate += "myGamePiece" + identifier + ".update(); \n";
-                identifier++;
+                componentUpdate += "myGamePiece" + identifier + subIdentifier + ".update(); \n";
+                
+                subIdentifierCounter++;
+                if(subIdentifierCounter > 25)
+                {
+                    subIdentifierCounter = 0;
+                    subIdentifier = 'A';
+                    identifier++;
+                }
+                else
+                    subIdentifier++;
             }
 
             if (line == null) {
