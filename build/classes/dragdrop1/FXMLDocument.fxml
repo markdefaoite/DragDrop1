@@ -10,13 +10,13 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dragdrop1.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dragdrop1.FXMLDocumentController">
    <children>
       <SplitPane dividerPositions="0.25196850393700787" layoutX="6.0" layoutY="-32.0" prefHeight="590.0" prefWidth="637.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="300.0">
                <children>
-                  <Accordion layoutX="-36.0" maxWidth="200.0" minWidth="30.0" prefHeight="602.0" prefWidth="174.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Accordion layoutX="-36.0" maxHeight="500.0" maxWidth="200.0" minWidth="30.0" prefHeight="500.0" prefWidth="174.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <panes>
                       <TitledPane animated="false" text="untitled 1">
                         <content>
@@ -42,6 +42,7 @@
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
                                     <Button layoutX="72.0" layoutY="61.0" mnemonicParsing="false" onAction="#printFile" text="Print" />
+                                    <Button layoutX="72.0" layoutY="101.0" mnemonicParsing="false" onAction="#readNodes" text="Read" />
                                  </children></AnchorPane>
                         </content>
                       </TitledPane>
@@ -49,10 +50,11 @@
                   </Accordion>
                </children>
             </AnchorPane>
-          <AnchorPane fx:id="myCanvas" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="600.0" SplitPane.resizableWithParent="false">
+          <AnchorPane fx:id="myCanvas" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="500.0" prefHeight="500.0" prefWidth="500.0" SplitPane.resizableWithParent="false">
                <children>
                   <Line endY="50.0" />
                   <Line endX="50.0" />
+                  <Line endY="50.0" layoutX="522.0" layoutY="300.0" />
                </children></AnchorPane>
         </items>
       </SplitPane>
