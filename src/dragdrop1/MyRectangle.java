@@ -42,4 +42,6 @@ public class MyRectangle extends Rectangle {
     public int getIntId() {
         return id;
     }
+    
+    
 }

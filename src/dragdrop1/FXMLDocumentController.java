@@ -14,14 +14,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import static javafx.scene.paint.Color.DODGERBLUE;
+import static javafx.scene.paint.Color.RED;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
 
 /**
  *
@@ -37,11 +38,12 @@ public class FXMLDocumentController implements Initializable, Cloneable {
     private Circle Circle;
     @FXML
     private Polygon Triangle;
-    @FXML
-    private Button CButton;
 
     private ArrayList<MyRectangle> list = new ArrayList<>();
     int index = 0;
+    @FXML
+    private Circle placeHolderPlayer;
+    CheckBox PlayerTrue;
 
     private void handleButtonAction(ActionEvent event) {
 
@@ -50,42 +52,6 @@ public class FXMLDocumentController implements Initializable, Cloneable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO 
-    }
-
-    @FXML
-    private void createButton(ActionEvent event) {
-
-        MyRectangle x = new MyRectangle(index);
-        index++;
-        x.setHeight(Square.getHeight());
-        x.setWidth(Square.getWidth());
-        x.setFill(DODGERBLUE);
-
-        x.setOnMouseReleased((MouseEvent e) -> {
-            Node n = (Node) e.getSource();
-            Bounds b = n.getBoundsInParent();
-
-            System.out.println("X: " + b.getMaxX() + "Y: " + b.getMaxY());
-
-            e.consume();
-        });
-
-        /*
-        x.setOnMouseReleased((MouseEvent e) -> {
-            System.out.println("X: " + e.getX() + "Y: " + e.getY());
-        }); */
-        x.setOnMouseDragged((MouseEvent e) -> {
-            Node n = (Node) e.getSource();
-            n.setTranslateX(n.getTranslateX() + e.getX());
-            n.setTranslateY(n.getTranslateY() + e.getY());
-            x.setXandY(n.getTranslateX() + e.getX(), n.getTranslateY() + e.getY());
-
-            e.consume();
-        });
-
-        myCanvas.getChildren().add(x);
-       
-        list.add(x);
     }
 
     @FXML
@@ -114,7 +80,7 @@ public class FXMLDocumentController implements Initializable, Cloneable {
 
     @FXML
     private void makeSquare(MouseEvent event) {
-        
+
         MyRectangle x = new MyRectangle(index);
         index++;
         System.out.println("makeSquare: " + index);
@@ -125,21 +91,15 @@ public class FXMLDocumentController implements Initializable, Cloneable {
         x.setOnMouseReleased((MouseEvent e) -> {
             Node n = (Node) e.getSource();
             Bounds b = n.getBoundsInParent();
-
             System.out.println("X: " + b.getMaxX() + "Y: " + b.getMaxY());
-
             e.consume();
         });
 
-        /*
-        x.setOnMouseReleased((MouseEvent e) -> {
-            System.out.println("X: " + e.getX() + "Y: " + e.getY());
-        }); */
         x.setOnMouseDragged((MouseEvent e) -> {
             Node n = (Node) e.getSource();
             double Xco = n.getTranslateX() + e.getX();
             double Yco = n.getTranslateY() + e.getY();
-                    
+
             n.setTranslateX(Xco);
             n.setTranslateY(Yco);
             x.setXandY(Xco, Yco);
@@ -148,18 +108,13 @@ public class FXMLDocumentController implements Initializable, Cloneable {
 
         myCanvas.getChildren().add(x);
         list.add(x);
-       
 
     }
 
     @FXML
     private void printFile(ActionEvent event) throws IOException {
         Printer printer = new Printer();
-
-       // printer.createFile();
-       printer.pushToFile(list);
-        
-
+        printer.pushToFile(list);
     }
 
     @FXML
@@ -168,7 +123,7 @@ public class FXMLDocumentController implements Initializable, Cloneable {
     }
 
     private void update(int intId, double x, double y) {
-        
+
     }
 
     @FXML
@@ -177,6 +132,8 @@ public class FXMLDocumentController implements Initializable, Cloneable {
         System.out.println(printer.readList(list));
     }
 
-    
-
+    @FXML
+    private void makePlayer(MouseEvent event) {
+        
+    }
 }

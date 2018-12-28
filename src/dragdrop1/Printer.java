@@ -64,8 +64,7 @@ public class Printer {
             writer = new FileWriter("template2.html");
             String line = reader.readLine();
             String componentIntialize = "", componentDeclare = "", componentUpdate = "";
-
-
+            
             for (int i = 0; i < list.size(); i++) {
                 componentDeclare += " var myGamePiece" + identifier + subIdentifier + "; \n";
 
