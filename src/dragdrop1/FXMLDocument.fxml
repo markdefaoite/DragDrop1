@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.SplitPane?>
@@ -33,7 +34,7 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <Button fx:id="CButton" layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#createButton" text="Create" />
+                                    <Circle fx:id="placeHolderPlayer" fill="DODGERBLUE" layoutX="46.0" layoutY="52.0" onMouseClicked="#makePlayer" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
                                  </children></AnchorPane>
                         </content>
                       </TitledPane>
@@ -50,12 +51,16 @@
                   </Accordion>
                </children>
             </AnchorPane>
-          <AnchorPane fx:id="myCanvas" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="500.0" prefHeight="500.0" prefWidth="500.0" SplitPane.resizableWithParent="false">
+          <AnchorPane fx:id="myCanvas" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="500.0" prefHeight="500.0" prefWidth="500.0" SplitPane.resizableWithParent="false">
                <children>
-                  <Line endY="50.0" />
-                  <Line endX="50.0" />
-                  <Line endY="50.0" layoutX="522.0" layoutY="300.0" />
-               </children></AnchorPane>
+                  <Line endY="500.0" />
+                  <Line endX="500.0" />
+                  <Line endY="500.0" layoutX="500.0" />
+                  <Line endX="500.0" layoutY="500.0" />
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </opaqueInsets></AnchorPane>
         </items>
       </SplitPane>
    </children>

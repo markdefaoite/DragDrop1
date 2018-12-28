@@ -15,213 +15,17 @@ canvas {
  var myGamePieceAA; 
  var myGamePieceAB; 
  var myGamePieceAC; 
- var myGamePieceAD; 
- var myGamePieceAE; 
- var myGamePieceAF; 
- var myGamePieceAG; 
- var myGamePieceAH; 
- var myGamePieceAI; 
- var myGamePieceAJ; 
- var myGamePieceAK; 
- var myGamePieceAL; 
- var myGamePieceAM; 
- var myGamePieceAN; 
- var myGamePieceAO; 
- var myGamePieceAP; 
- var myGamePieceAQ; 
- var myGamePieceAR; 
- var myGamePieceAS; 
- var myGamePieceAT; 
- var myGamePieceAU; 
- var myGamePieceAV; 
- var myGamePieceAW; 
- var myGamePieceAX; 
- var myGamePieceAY; 
- var myGamePieceAZ; 
- var myGamePieceBA; 
- var myGamePieceBB; 
- var myGamePieceBC; 
- var myGamePieceBD; 
- var myGamePieceBE; 
- var myGamePieceBF; 
- var myGamePieceBG; 
- var myGamePieceBH; 
- var myGamePieceBI; 
- var myGamePieceBJ; 
- var myGamePieceBK; 
- var myGamePieceBL; 
- var myGamePieceBM; 
- var myGamePieceBN; 
- var myGamePieceBO; 
- var myGamePieceBP; 
- var myGamePieceBQ; 
- var myGamePieceBR; 
- var myGamePieceBS; 
- var myGamePieceBT; 
- var myGamePieceBU; 
- var myGamePieceBV; 
- var myGamePieceBW; 
- var myGamePieceBX; 
- var myGamePieceBY; 
- var myGamePieceBZ; 
- var myGamePieceCA; 
- var myGamePieceCB; 
- var myGamePieceCC; 
- var myGamePieceCD; 
- var myGamePieceCE; 
- var myGamePieceCF; 
- var myGamePieceCG; 
- var myGamePieceCH; 
- var myGamePieceCI; 
- var myGamePieceCJ; 
- var myGamePieceCK; 
- var myGamePieceCL; 
- var myGamePieceCM; 
- var myGamePieceCN; 
- var myGamePieceCO; 
- var myGamePieceCP; 
- var myGamePieceCQ; 
- var myGamePieceCR; 
- var myGamePieceCS; 
- var myGamePieceCT; 
- var myGamePieceCU; 
- var myGamePieceCV; 
- var myGamePieceCW; 
- var myGamePieceCX; 
- var myGamePieceCY; 
- var myGamePieceCZ; 
- var myGamePieceDA; 
- var myGamePieceDB; 
- var myGamePieceDC; 
- var myGamePieceDD; 
- var myGamePieceDE; 
- var myGamePieceDF; 
- var myGamePieceDG; 
- var myGamePieceDH; 
- var myGamePieceDI; 
- var myGamePieceDJ; 
- var myGamePieceDK; 
- var myGamePieceDL; 
- var myGamePieceDM; 
- var myGamePieceDN; 
- var myGamePieceDO; 
- var myGamePieceDP; 
- var myGamePieceDQ; 
- var myGamePieceDR; 
- var myGamePieceDS; 
- var myGamePieceDT; 
- var myGamePieceDU; 
- var myGamePieceDV; 
- var myGamePieceDW; 
 
-
+var myPlayer;
 
 function startGame() {
 
-myGamePieceAA = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAB = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAC = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAD = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAE = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAF = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAG = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAH = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAI = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAJ = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAK = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAL = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAM = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAN = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAO = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAP = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAQ = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAR = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAS = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAT = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAU = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAV = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAW = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAX = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAY = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceAZ = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBA = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBB = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBC = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBD = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBE = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBF = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBG = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBH = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBI = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBJ = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBK = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBL = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBM = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBN = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBO = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBP = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBQ = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBR = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBS = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBT = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBU = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBV = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBW = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBX = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBY = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceBZ = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCA = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCB = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCC = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCD = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCE = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCF = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCG = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCH = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCI = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCJ = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCK = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCL = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCM = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCN = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCO = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCP = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCQ = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCR = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCS = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCT = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCU = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCV = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCW = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCX = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCY = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceCZ = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDA = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDB = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDC = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDD = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDE = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDF = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDG = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDH = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDI = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDJ = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDK = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDL = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDM = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDN = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDO = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDP = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDQ = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDR = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDS = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDT = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDU = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDV = new component(50.0, 50.0,"red", 0.0, 0.0);
-myGamePieceDW = new component(50.0, 50.0,"red", 0.0, 0.0);
+myGamePieceAA = new component(50.0, 50.0,"red", 161.0, 139.0);
+myGamePieceAB = new component(50.0, 50.0,"red", 305.0, 207.0);
+myGamePieceAC = new component(50.0, 50.0,"red", 59.0, 173.0);
 
 	
-	
+	myPlayer = new playerComponent(30, 30, "blue", 10, 120);
 	myGameArea.start();
 	
 }
@@ -238,6 +42,25 @@ function component(width, height, color, x, y) {
 		}
 }
 
+function playerComponent(width, height, color, x, y) {
+    this.gamearea = myGameArea;
+    this.width = width;
+    this.height = height;
+    this.speedX = 0;
+    this.speedY = 0;    
+    this.x = x;
+    this.y = y;    
+    this.update = function() {
+        ctx = myGameArea.context;
+        ctx.fillStyle = color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+    this.newPos = function() {
+        this.x += this.speedX;
+        this.y += this.speedY;        
+    }    
+}
+
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
@@ -247,7 +70,16 @@ var myGameArea = {
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.frameNo = 0;
         this.interval = setInterval(updateGameArea, 20);
-        },
+            
+        window.addEventListener('keydown', function (e) {
+			myGameArea.keys = (myGameArea.keys || []);
+			myGameArea.keys[e.keyCode] = (e.type == "keydown");
+        })
+        window.addEventListener('keyup', function (e) {
+            myGameArea.keys[e.keyCode] = (e.type == "keydown");            
+        })    
+				
+		},
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
@@ -258,107 +90,17 @@ var myGameArea = {
 function updateGameArea() {
 	
 	myGameArea.clear();
+	    myPlayer.speedX = 0;
+    myPlayer.speedY = 0;    
+    if (myGameArea.keys && myGameArea.keys[37]) {myPlayer.speedX = -1; }
+    if (myGameArea.keys && myGameArea.keys[39]) {myPlayer.speedX = 1; }
+    if (myGameArea.keys && myGameArea.keys[38]) {myPlayer.speedY = -1; }
+    if (myGameArea.keys && myGameArea.keys[40]) {myPlayer.speedY = 1; }
+    myPlayer.newPos();
+	myPlayer.update();
 myGamePieceAA.update(); 
 myGamePieceAB.update(); 
 myGamePieceAC.update(); 
-myGamePieceAD.update(); 
-myGamePieceAE.update(); 
-myGamePieceAF.update(); 
-myGamePieceAG.update(); 
-myGamePieceAH.update(); 
-myGamePieceAI.update(); 
-myGamePieceAJ.update(); 
-myGamePieceAK.update(); 
-myGamePieceAL.update(); 
-myGamePieceAM.update(); 
-myGamePieceAN.update(); 
-myGamePieceAO.update(); 
-myGamePieceAP.update(); 
-myGamePieceAQ.update(); 
-myGamePieceAR.update(); 
-myGamePieceAS.update(); 
-myGamePieceAT.update(); 
-myGamePieceAU.update(); 
-myGamePieceAV.update(); 
-myGamePieceAW.update(); 
-myGamePieceAX.update(); 
-myGamePieceAY.update(); 
-myGamePieceAZ.update(); 
-myGamePieceBA.update(); 
-myGamePieceBB.update(); 
-myGamePieceBC.update(); 
-myGamePieceBD.update(); 
-myGamePieceBE.update(); 
-myGamePieceBF.update(); 
-myGamePieceBG.update(); 
-myGamePieceBH.update(); 
-myGamePieceBI.update(); 
-myGamePieceBJ.update(); 
-myGamePieceBK.update(); 
-myGamePieceBL.update(); 
-myGamePieceBM.update(); 
-myGamePieceBN.update(); 
-myGamePieceBO.update(); 
-myGamePieceBP.update(); 
-myGamePieceBQ.update(); 
-myGamePieceBR.update(); 
-myGamePieceBS.update(); 
-myGamePieceBT.update(); 
-myGamePieceBU.update(); 
-myGamePieceBV.update(); 
-myGamePieceBW.update(); 
-myGamePieceBX.update(); 
-myGamePieceBY.update(); 
-myGamePieceBZ.update(); 
-myGamePieceCA.update(); 
-myGamePieceCB.update(); 
-myGamePieceCC.update(); 
-myGamePieceCD.update(); 
-myGamePieceCE.update(); 
-myGamePieceCF.update(); 
-myGamePieceCG.update(); 
-myGamePieceCH.update(); 
-myGamePieceCI.update(); 
-myGamePieceCJ.update(); 
-myGamePieceCK.update(); 
-myGamePieceCL.update(); 
-myGamePieceCM.update(); 
-myGamePieceCN.update(); 
-myGamePieceCO.update(); 
-myGamePieceCP.update(); 
-myGamePieceCQ.update(); 
-myGamePieceCR.update(); 
-myGamePieceCS.update(); 
-myGamePieceCT.update(); 
-myGamePieceCU.update(); 
-myGamePieceCV.update(); 
-myGamePieceCW.update(); 
-myGamePieceCX.update(); 
-myGamePieceCY.update(); 
-myGamePieceCZ.update(); 
-myGamePieceDA.update(); 
-myGamePieceDB.update(); 
-myGamePieceDC.update(); 
-myGamePieceDD.update(); 
-myGamePieceDE.update(); 
-myGamePieceDF.update(); 
-myGamePieceDG.update(); 
-myGamePieceDH.update(); 
-myGamePieceDI.update(); 
-myGamePieceDJ.update(); 
-myGamePieceDK.update(); 
-myGamePieceDL.update(); 
-myGamePieceDM.update(); 
-myGamePieceDN.update(); 
-myGamePieceDO.update(); 
-myGamePieceDP.update(); 
-myGamePieceDQ.update(); 
-myGamePieceDR.update(); 
-myGamePieceDS.update(); 
-myGamePieceDT.update(); 
-myGamePieceDU.update(); 
-myGamePieceDV.update(); 
-myGamePieceDW.update(); 
 
 }
 
